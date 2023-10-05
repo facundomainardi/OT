@@ -23,8 +23,8 @@ public class OrdenDeTrabajo {
     @JoinColumn(name = "servicioxsocio_id")
      private ServicioXSocio servicioXSocio;
 
-private String descripcion;
-  private Estado estado;
+    private String descripcion;
+    private Estado estado;
 
    public OrdenDeTrabajo() {
    }

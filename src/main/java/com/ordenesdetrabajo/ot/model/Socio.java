@@ -17,6 +17,10 @@ public class Socio extends Persona{
 
     private Estado estado;
 
+    public Socio(){
+
+    }
+
     public Socio(String first, String last, String email, String dni, String calle, int numeroPuerta, Estado estado) {
         super(first, last, email, dni);
         this.calle = calle;
@@ -38,5 +42,13 @@ public class Socio extends Persona{
 
     public void setNumeroPuerta(int numeroPuerta) {
         this.numeroPuerta = numeroPuerta;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 }

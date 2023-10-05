@@ -3,6 +3,7 @@ package com.ordenesdetrabajo.ot.controllers;
 import com.ordenesdetrabajo.ot.model.Personal;
 import com.ordenesdetrabajo.ot.dto.PersonalDTO;
 import com.ordenesdetrabajo.ot.repositories.PersonalRepository;
+import com.ordenesdetrabajo.ot.services.PersonalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,17 +18,15 @@ import static java.util.stream.Collectors.toList;
 @RequestMapping("/api")
 public class PersonalController {
     @Autowired
-    PersonalRepository personalRepository;
+    PersonalService personalService;
 
     @RequestMapping("/personals")
     public List<PersonalDTO> getPersonal() {
-        return  personalRepository.findAll().stream().map(PersonalDTO::new).collect(toList());
-
+        return  personalService.getAll();
     }
 
     @RequestMapping("/personal/{id}")
     public PersonalDTO getPersonal(@PathVariable Long id) {
-
-        return personalRepository.findById(id).map(PersonalDTO::new).orElse(null);
+        return personalService.getPersonalDTO(id);
     }
 }

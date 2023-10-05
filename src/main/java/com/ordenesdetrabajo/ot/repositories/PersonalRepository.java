@@ -10,4 +10,6 @@ public interface PersonalRepository extends JpaRepository<Personal, Long> {
     Personal findByLastName(String lastName);
     Personal findByEmail(String email);
 
+   // Personal findByDNI(String dni);
+
 }
